@@ -34,3 +34,4 @@ CMakePresets.json
 .vscode
 out
 .vs
+build
