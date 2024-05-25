@@ -16,6 +16,5 @@ endmacro()
 
 # 调用宏来打印所有环境变量
 print_environment_variables()
-
 add_subdirectory(app)
 

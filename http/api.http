@@ -1,0 +1,48 @@
+@hostname = localhost
+@port = 19088
+@host = {{hostname}}:{{port}}
+@contentType = application/json
+
+
+POST http://{{host}}/api/checkLogin HTTP/1.1
+
+###
+#dbKey: 1a7f4f04c1cc4813b5bccfcf7d575b9e0563ff4096734d1e9b208157487be519
+#"privateKey": "-----BEGIN RSA PRIVATE KEY-----\nMIICXAIBAAKBgQC+LlCM0C8dVsUfbl5gyulA7B9brDYfTmwrPI60Kt9XIxux+9Z9\nnCEzHHd/0FhimUnvlszeI3kEHHjZifWyX2LH9rJtZnX3YvrQi8vgK4Xmr9SZmE2h\no5sXXsFTsjr7ivxMoZ3PwWTwDFvrWFkxeDUhvKcc2JhLcIC8qaG3OWCk3wIDAQAB\nAoGBAIv77UBosHVI/BmRlJhsYtptsvs4PDI4+DevAF8vO2uZJPaSJyQX+vvzFSaY\nRaZ1rE1VU4Ci3Z2gE3gUKyxbN4oxej3D9IJnh1p4iGO1id7HADJzgHMhH8AF+iTc\nFGWNoks3V5wr/pFq8VBMjO3PXfZ5BXH5P8RQ0XT6joqNQ0upAkEA34NT0m9u3Lqe\nz/LovcDzbWvT/3eDS8NSxLc0nzGYzqm8u4OEFx13vqomjQ6SDUnbVFN9zfNltHJY\nGWnB+m0mfQJBANnSvLeFoGZmZLZp+1nZdFcNo6PDi9p9LaHYWUeD7JZ2vXdE0ol7\n3kB3OLwg4cjHOznYB1cDDg2qxckuIQdo64sCQCLN01aYTX4HfUVKQN2TVxR5zugf\n1w0MHC5PjN0hHvdHTQEx6Hak+wlwe1JJq4pwLrwByDwyo2qmx3slkbQKHQ0CQBv9\nFRyrwemGfKhnw9FOvME20nEHfl/rt8JVD1u+GtdWmI/LuxXJYcx8xUB/JSPsXbLY\nDFFk5hhhehqYn8vY8nMCQByWtIAuZsqun/lhnaYYKvlhRL78YEQ0XBvzgPnQeCGi\na0t4LpyVOuxezeYHlJOrGlOgmlwpZZt7bSZFmv/kJVs=\n-----END RSA PRIVATE KEY-----\n",
+POST http://{{host}}/api/userInfo HTTP/1.1
+
+###
+
+POST http://{{host}}/api/getContactList HTTP/1.1
+
+###
+POST http://{{host}}/api/sendTextMsg HTTP/1.1
+Content-Type: {{contentType}}
+
+{
+    "wxid":"wxid_1cgcikb50q5622",
+    "msg":"hello"
+}
+
+###
+POST http://{{host}}/api/getDBInfo HTTP/1.1
+
+###
+POST http://{{host}}/api/execSql HTTP/1.1
+
+{
+    dbHandle: 2908400024624,
+    sql: "select * from Contact;"
+}
+
+### 
+POST http://{{host}}/api/hookSyncMsg HTTP/1.1
+
+{
+    "port": "19099",
+    "ip":"127.0.0.1",
+    "url":"http://localhost:5050",
+    "timeout":"30000",
+    "enableHttp":true
+}
+
