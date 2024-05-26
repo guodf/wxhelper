@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 3.10...3.27)
-
+# 设置Cmake的工具链文件
+set(CMAKE_TOOLCHAIN_FILE $ENV{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake)
+include($ENV{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake)
 add_subdirectory(base64)
 add_subdirectory(lz4)
 add_subdirectory(mongoose)
