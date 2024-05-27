@@ -1,0 +1,17 @@
+name: sync a fork
+on: 
+    push:
+    schedule:
+        - cron: "5 * * * *"
+    workflow_dispatch: 
+jobs:
+    sync:
+        runs-on: ubuntu-latest
+        steps:
+            - name: clone
+              uses: actions/checkout@v4.1.5
+            - name: sync fork
+              uses: guodf/fork-sync@v0.0.1
+              with:
+                  branchs: ""
+                  upstream_repo: ttttupup/wxhelper
